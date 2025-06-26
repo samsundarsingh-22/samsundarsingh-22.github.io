@@ -6,14 +6,12 @@ function Home() {
     <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center p-6"
       style={{
-        backgroundImage:
-          "linear-gradient(to bottom right, rgba(239, 246, 255, 0.8), rgba(219, 234, 254, 0.8)), url('/bg-home.jpeg')",
-      }}
+  backgroundImage: `linear-gradient(to bottom right, rgba(239, 246, 255, 0.8), rgba(219, 234, 254, 0.8)), url(${process.env.PUBLIC_URL + "/bg-home.jpeg"})`
+}}
     >
       <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10 text-center md:text-left">
         {/* 👤 Profile Image */}
-        <img
-          src="/Sam_IISc.jpeg"
+        <img src={process.env.PUBLIC_URL + "/Sam_IISc.jpeg"} 
           alt="Sam Sundar Singh"
           className="w-40 h-40 md:w-48 md:h-48 rounded-full shadow-lg object-cover"
         />

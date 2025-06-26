@@ -8,7 +8,7 @@ import Teaching from "./components/Teaching";
 
 function App() {
   return (
-    <Router basename="/samsundarsingh-22.github.io">
+    <Router>
       <nav className="bg-white shadow p-4 flex flex-wrap justify-center space-x-6">
         <Link to="/" className="text-blue-600 font-semibold hover:underline">Home</Link>
         <Link to="/about" className="text-blue-600 font-semibold hover:underline">About</Link>
