@@ -1,25 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Research from './components/Research';
-import Teaching from './components/Teaching';
-import Contact from './components/Contact';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Research from "./components/Research";
+import Teaching from "./components/Teaching";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div style={{ padding: '2rem' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/research" element={<Research />} />
-          <Route path="/teaching" element={<Teaching />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+    <Router basename="/samsundarsingh-22.github.io">
+      <div className="flex flex-col min-h-screen">
+        <nav className="bg-white shadow p-4 flex flex-wrap justify-center space-x-6">
+          <Link to="/" className="text-blue-600 font-semibold hover:underline">Home</Link>
+          <Link to="/about" className="text-blue-600 font-semibold hover:underline">About</Link>
+          <Link to="/research" className="text-blue-600 font-semibold hover:underline">Research</Link>
+          <Link to="/teaching" className="text-blue-600 font-semibold hover:underline">Teaching</Link>
+          <Link to="/contact" className="text-blue-600 font-semibold hover:underline">Contact</Link>
+        </nav>
+
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/teaching" element={<Teaching />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+        <footer className="bg-gray-100 text-center text-gray-600 py-4 mt-8">
+          © {new Date().getFullYear()} Sam Sundar Singh. All rights reserved.
+        </footer>
       </div>
     </Router>
   );
